@@ -1,4 +1,4 @@
-[PSColumn psColumnWithName:@"Command line" fullname:@"Command line" align:NSTextAlignmentLeft width:170 tag:0 style:ColumnStylePathTrunc | ColumnStyleTooLong
+[PSColumn psColumnWithName:@"Command line" fullname:@"Command line" align:NSTextAlignmentLeft width:150 tag:0 style:ColumnStylePathTrunc | ColumnStyleTooLong
 			data:^NSString*(PSProc *proc) { return [proc.executable stringByAppendingString:proc.args]; }
 			sort:^NSComparisonResult(PSProc *a, PSProc *b) { return [a.name caseInsensitiveCompare:b.name]; }
 			summary:^NSString*(PSProcArray* procs) { return [NSString stringWithFormat:procs.count == procs.totalCount ? @"Total processes: %lu" : @"Shown processes: %lu", (unsigned long)procs.count]; }
@@ -181,7 +181,7 @@
 			color:^UIColor*(PSProc *proc) { DIFF(nice); }
 			descr:@"A positive 'nice' value lowers the priority of the process' threads. A negative value raises the priority.\n\n"
 				"This is also indicated in the 'Process State' column by symbols \u25BC and \u25B2 respectively."],
-		[PSColumn psColumnWithName:@"Role" fullname:@"Mach Task Role" align:NSTextAlignmentLeft width:75 tag:20 style:0
+		[PSColumn psColumnWithName:@"Role" fullname:@"Mach Task Role" align:NSTextAlignmentLeft width:55 tag:20 style:0
 			data:^NSString*(PSProc *proc) { return psTaskRoleString(proc); }
 			sort:^NSComparisonResult(PSProc *a, PSProc *b) { return (a.role + (a.role <= 0 ? 50 : 0)) - (b.role + (b.role <= 0 ? 50 : 0)); }
 			summary:^NSString*(PSProcArray* procs) { return procs.guiCount ? [NSString stringWithFormat:@" UIApps: %d", procs.guiCount] : @"   -"; }

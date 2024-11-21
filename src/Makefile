@@ -1,5 +1,8 @@
-ARCHS = armv7 arm64
-TARGET = iphone:clang:13.0:6.0
+export ARCHS = arm64e
+export CLI = 0
+export TARGET = iphone:clang:13.0:6.0
+export FINALPACKAGE=1
+export THEOS_DEVICE_IP=192.168.1.112
 APPLICATION_NAME = CocoaTop
 ADDITIONAL_OBJCFLAGS = -fobjc-arc # -Wno-deprecated-declarations
 CocoaTop_FILES = RootViewController.m SockViewController.m Proc.m ProcArray.m NetArray.m Sock.m Column.m GridCell.m Setup.m SetupColumns.m AppIcon.m TextViewController.m THtmlViewController.m PopupMenuView.m BackButtonHandler.m Compat.m AppDelegate.m main.m

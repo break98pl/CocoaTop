@@ -133,7 +133,7 @@
 	[filter sizeToFit];
     
     if (@available(iOS 13, *)) {
-        self.tableView.backgroundColor = UIColor.systemBackgroundColor;
+        self.tableView.backgroundColor = UIColor.secondarySystemBackgroundColor;
     } else {
         self.tableView.backgroundColor = [UIColor colorWithWhite:.75 alpha:1];
     }
